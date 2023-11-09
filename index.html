@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz on cricket WC </title>
+</head>
+<body>
+    <script>var readlineSync = require("readline-sync");
+        var score = 0;
+        var userName = readlineSync.question("what's your name my friend? ");
+        console.log("Welcome!",userName,"how well you are familiar with the ODI worldcups? let us find out. ");
+        function play(question,option,answer) {
+          var  userAnswer = readlineSync.keyInSelect(option,question) 
+          var option; 
+          if (option[userAnswer] ===answer) {
+            console.log("Your were right buddy! ");
+            score++;
+          }else {
+            console.log("Wrong!")
+            score--;
+          }
+          console.log("Your SCORE CARD is",score);
+          console.log("*********************************");
+        }
+        
+         var questionHub = [{
+           question:"who has hit most sixes in an odi worldcup inning? ",
+           option: ["Rohit Sharma","Eoin Morgan","Glenn Maxwell","Chris Gayle"],
+           answer:"Eoin Morgan"
+         } ,{
+           question:"who has hit most sixes in  odi worldcup ? ",
+           option: ["Rohit Sharma","Eoin Morgan","Glenn Maxwell","Chris Gayle"],
+           answer:"Chris Gayle"
+         },{
+           question:"who has taken most wickets in wc for india ? ",
+           option: ["Ishant Sharma","Jasprit Bumrah","Shami","Anil Kumble"],
+           answer:"Shami"
+           },{
+           question:"who was the winning captain in 2003 worldcup ? ",
+           option: ["M.S Dhoni","Sourav Ganguly","Ricky Ponting","Anil Kumble"],
+           answer:"Ricky Ponting"
+          },{
+           question:"when was the last time an indian bowler took hat-trick in cwc ? ",
+           option: ["1999","2003","2011","2019"],
+           answer:"2019"
+         }]
+          for (var i=0; i<questionHub.length; i++){
+            var currentQuestion=questionHub[i]
+            play(currentQuestion.question,currentQuestion.option,currentQuestion.answer  )
+          } 
+        console.log("YAY! your final score is ",score);
+        
+          
+        </script>
+</body>
+</html>
